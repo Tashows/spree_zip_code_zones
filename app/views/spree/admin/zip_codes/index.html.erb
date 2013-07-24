@@ -1,12 +1,12 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
-  <%= t(:zip_codes) %>
+  <%= Spree.t(:zip_codes) %>
 <% end %>
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to t(:new_zip_code), new_object_url, :icon => 'icon-plus', :id => 'admin_new_zipcode_link' %>
+    <%= button_link_to Spree.t(:new_zip_code), new_object_url, :icon => 'icon-plus', :id => 'admin_new_zip_code_link' %>
   </li>
 <% end %>
 
@@ -22,21 +22,21 @@
     </tr>
   </thead>
   <tbody>
-    <% @zipcodes.each do |zipcode| %>
+    <% @zip_codes.each do |zip_code| %>
       <tr>
-        <td><%= zipcode.name %></td>
+        <td><%= zip_code.name %></td>
         <td class="actions">
-          <%=link_to_edit zipcode, :no_text => true %>
-          <%=link_to_delete zipcode, :no_text => true %>
+          <%=link_to_edit zip_code, :no_text => true %>
+          <%=link_to_delete zip_code, :no_text => true %>
         </td>
       </tr>
     <% end %>
-    <% if @zipcodes.empty? %>
+    <% if @zip_codes.empty? %>
       <tr><td colspan="2"><%= t('none') %></td></tr>
     <% end %>
   </tbody>
 </table>
 
 <p>
-  <%= button_link_to t('new_zipcode'), new_admin_zipcode_url, :icon => 'add' %>
+  <%= button_link_to Spree.t('new_zip_code'), new_admin_zip_code_url, :icon => 'add' %>
 </p>

@@ -1,18 +1,18 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
-  <%= t(:editing_zip_code) %>
+  <%= Spree.t(:editing_zip_code) %>
 <% end %>
 
 <% content_for :page_actions do %>
   <li>
-    <%= button_link_to t(:back_to_zip_codes_list), admin_zip_codes_path, :icon => 'icon-arrow-left' %>
+    <%= button_link_to Spree.t(:back_to_zip_codes_list), admin_zip_codes_path, :icon => 'icon-arrow-left' %>
   </li>
 <% end %>
 
-<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @zipcode } %>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @zip_code } %>
 
-<%= form_for [:admin, @state, @zipcode] do |f| %>
+<%= form_for [:admin, @state, @zip_code] do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
 <% end %>

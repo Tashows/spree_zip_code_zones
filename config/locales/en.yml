@@ -1,9 +1,10 @@
 ---
 en:
-  zipcode: Zipcode
-  zipcode_based: Zipcode Based
-  zipcodes: Zipcodes
-  zipcodes_description: "Administer the list of zipcodes"
-  add_zipcode: "Add Zipcode"
-  new_zipcode: "New Zipcode"
-  editing_zipcode: "Editing Zipcode"
+  spree:
+    zip_code: Zip Code
+    zip_code_based: Zip Code Based
+    zip_codes: Zip Codes
+    zip_codes_description: "Administer the list of zip codes"
+    add_zip_code: "Add Zip Code"
+    new_zip_code: "New Zip Code"
+    editing_zip_code: "Editing Zip Code"

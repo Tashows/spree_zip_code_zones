@@ -3,7 +3,7 @@
 Spree::Core::Engine.routes.prepend do
 
   namespace :admin do 
-    resources :zipcodes
+    resources :zip_codes
   end
 
 end

@@ -1,0 +1,5 @@
+<li data-hook="zip_code_member" class="field">
+  <%= f.hidden_field :zoneable_type, :value => 'Spree::ZipCode' %>
+  <%= f.collection_select(:zoneable_id, @zip_codes, :id, :name,  {:include_blank => true}, {:class => 'select2 fullwidth'}) %>
+  <%= remove_nested f %>
+</li>

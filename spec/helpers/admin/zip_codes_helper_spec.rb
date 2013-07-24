@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe Admin::ZipcodesHelper do
+describe Admin::ZipCodesHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end

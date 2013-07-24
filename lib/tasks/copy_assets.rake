@@ -19,24 +19,24 @@ namespace :spree_zipzones do
     puts "ERROR: No source files in directory." if source_files.empty?
     
     source_files.each do |file|
-        begin
-          assets.each do |a|
-          if file =~ /.*#{a}/i
-            #puts "Found a match. It's a friggin miracle."
-            target = File.join(destination, file.gsub(source, ''))
-            unless File.exist?(target) && FileUtils.identical?(file, target)
-              FileUtils.cp(file, target)
-            end 
-            puts "Copying File: [" + file + "]"
-          
-          else
-            #puts "Not what we want."
-          end
+      begin
+        assets.each do |a|
+        if file =~ /.*#{a}/i
+          #puts "Found a match. It's a friggin miracle."
+          target = File.join(destination, file.gsub(source, ''))
+          unless File.exist?(target) && FileUtils.identical?(file, target)
+            FileUtils.cp(file, target)
+          end 
+          puts "Copying File: [" + file + "]"
+        
+        else
+          #puts "Not what we want."
         end
-          
-        rescue Exception => e
-          raise "Could not copy #{file} to #{target}: \n" + e 
-        end
-      end  
+      end
+        
+      rescue Exception => e
+        raise "Could not copy #{file} to #{target}: \n" + e 
+      end
+    end  
   end
 end
