@@ -1,6 +1,6 @@
-module SpreeZipzones070
+module SpreeZipCodeZones
   class Engine < Rails::Engine
-    engine_name 'spree_zipzones_070'
+    engine_name 'spree_zip_code_zones'
 
     config.autoload_paths += %W(#{config.root}/lib)
 

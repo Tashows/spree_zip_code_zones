@@ -1,18 +1,18 @@
-module SpreeZipzones070
+module SpreeZipCodeZones
   module Generators
     class InstallGenerator < Rails::Generators::Base
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_zipzones_070\n"
+        append_file 'app/assets/javascripts/admin/all.js', "//= require admin/spree_zip_code_zones\n"
       end
 
       def add_stylesheets
-        inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_drop_ship\n", :before => /\*\//, :verbose => true
+        inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_zip_code_zones\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations
-        run 'bundle exec rake railties:install:migrations FROM=spree_zipzones_070'
+        run 'bundle exec rake railties:install:migrations FROM=spree_zip_code_zones'
       end
 
       def run_migrations
