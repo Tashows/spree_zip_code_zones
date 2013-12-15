@@ -1,3 +1,0 @@
-<!-- insert_after "code[erb-loud]:contains(\":type => 'state'\")" -->
-
-<%= render :partial => 'member_type', :locals => { :type => 'zip_code', :zone_form => zone_form } %>

@@ -11,12 +11,30 @@ Spree::Zone.class_eval do
       when "Spree::Country"
         zone_member.zoneable_id == address.country_id
       when "Spree::State"
-        zone_member.zoneable_id == address.state_id
+        zone_member == address.state_id
       when "Spree::ZipCode"
         zone_member.zoneable.name == address.zipcode
       else
         false
       end
+    end
+  end
+
+  def zip_code_ids
+    if kind == 'zip_code'
+      members.collect(&:zoneable_id)
+    else
+      []
+    end
+  end
+
+  def zip_code_ids=(ids)
+    zone_members.destroy_all
+    ids.reject{ |id| id.blank? }.map do |id|
+      member = Spree::ZoneMember.new
+      member.zoneable_type = 'Spree::ZipCode'
+      member.zoneable_id = id
+      members << member
     end
   end
 
